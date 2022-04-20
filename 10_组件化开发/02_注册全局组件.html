@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <component-a></component-a>
+    <component-b></component-b>
+    <component-name></component-name>
+  </template>
+
+  <template id="component-a">
+    <input type="text" v-model="message">
+    <h2>{{message}}</h2>
+  </template>
+
+  <template id="component-b">
+    <h2>{{title}}</h2>
+    <p>{{desc}}</p>
+  </template>
+
+  <template id="component-c">
+    <button @click="increate">点击按钮：{{counter}}</button>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const App = {
+      template: "#my-app",
+    }
+    const app = Vue.createApp(App);
+
+    app.component("component-a", {
+      template: "#component-a",
+      data() {
+        return {
+          message: "Hello World"
+        }
+      }
+    })
+
+    app.component("component-b", {
+      template: "#component-b",
+      data() {
+        return {
+          title: "呵呵呵呵",
+          desc: "红红火火恍恍惚惚"
+        }
+      }
+    })
+
+    app.component("ComponentName", {
+      template: "#component-c",
+      data() {
+        return {
+          counter: 0
+        }
+      },
+      methods: {
+        increate() {
+          return this.counter++;
+        }
+      }
+    })
+    app.mount("#app");
+  </script>
+</body>
+
+</html>

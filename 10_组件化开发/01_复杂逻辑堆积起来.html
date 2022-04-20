@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <input type="text" v-model="message">
+        <h2>{{message}}</h2>
+
+        <h2>{{title}}</h2>
+        <p>{{desc}}</p>
+
+        <button @click="increate">点击按钮：{{counter}}</button>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: "#my-app",
+            data() {
+                return {
+                    message: "Hello World",
+                    title: "呵呵呵呵",
+                    desc: "红红火火恍恍惚惚",
+                    counter: 0
+                }
+            },
+            methods: {
+                increate() {
+                    return this.counter++;
+                }
+            }
+        }
+
+        Vue.createApp(App).mount("#app");
+    </script>
+</body>
+
+</html>
