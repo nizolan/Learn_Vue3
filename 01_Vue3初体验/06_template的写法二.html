@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">哈哈哈这里的文字会被后面的替代了</div>
+    <template id="why">
+        <div>
+            <h2>{{message}}</h2>
+            <h2>{{num}}</h2>
+            <button @click="increment">+1</button>
+            <button @click="decrement">-1</button>
+            <button @click="btnClick">按钮1</button>
+            <button @click="btnClick2">按钮2</button>
+        </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+
+        Vue.createApp({
+            template: '#why',
+            data: function () {
+                return {
+                    message: 'template的写法二（标签）',
+                    num: 1000
+                }
+            },
+            methods: {
+                increment() {
+                    console.log("点击了+1");
+                    this.num++;
+                },
+                decrement() {
+                    console.log("点击了-1");
+                    this.num--;
+                },
+                btnClick: () => {
+                    // this===window? 不可以
+                    //写成一个箭头函数时，这个this就是window
+                    //在箭头函数中是不绑定this，但是在箭头函数中使用了this
+                    console.log("这里是箭头函数的this");
+                    console.log(this);
+                },
+                btnClick2: function () {
+                    // this===window? 不可以
+                    //写成一个箭头函数时，这个this就是window
+                    //在箭头函数中是不绑定this，但是在箭头函数中使用了this
+                    console.log("这里是正常函数的this");
+                    console.log(this);
+                }
+            }
+        }).mount('#app')
+
+    </script>
+</body>
+
+</html>

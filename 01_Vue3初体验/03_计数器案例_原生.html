@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 class="counter">0</h2>
+    <button class="addNumber">+1</button>
+    <button class="reduceNumber">-1</button>
+
+    <script>
+        // 获取所有的元素
+        const counterEl = document.querySelector(".counter");
+        const addNumberEl = document.querySelector(".addNumber");
+        const reduceNumberEl = document.querySelector(".reduceNumber");
+
+        // 定义变量
+        let num = 1000;
+        counterEl.innerHTML = num;
+
+        // 监听按钮的点击
+        addNumberEl.addEventListener('click', () => {
+            num++;
+            counterEl.innerHTML = num;
+        });
+        reduceNumberEl.addEventListener('click',()=>{
+            num--;
+            counterEl.innerHTML = num;
+        })
+
+    </script>
+</body>
+
+</html>

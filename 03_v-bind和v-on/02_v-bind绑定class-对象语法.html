@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <div :class = "className">哈哈哈</div>
+        <div :class = {active:isActive}>哈哈哈哈</div>
+        <button @click = "toggle">切换颜色</button>
+        <div :class = {active:isActive,title:true}>哈哈哈哈哈</div>
+        <div class="abc cbs" :class = {active:isActive,title:true}>哈哈哈哈哈</div>
+
+        <div class="abc cbs" :class = "classObj">呵呵呵呵</div>
+        <div class="abc cbs" :class = "getClassObj()">呵呵呵</div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template:"#my-app",
+            data(){
+                return {
+                    className:"why",
+                    isActive:true,
+                    classObj:{
+                        active:true,
+                        title:true
+                    }
+                };
+            },
+            methods:{
+                toggle(){
+                    this.isActive = !this.isActive;
+                },
+                getClassObj(){
+                    return {
+                        active:true,
+                        title:true
+                    }
+                }
+            }
+        };
+
+        Vue.createApp(App).mount("#app");
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+	"name": "ActionScript3",
+	"displayName": "ActionScript3",
+	"description": "Flash action script 3 support for vscode",
+	"version": "0.0.1",
+	"publisher": "yopsolo",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "ActionScript3",
+				"aliases": [
+					"ActionScript 3",
+					"ActionScript3"
+				],
+				"extensions": [
+					".as"
+				],
+				"configuration": "./ActionScript3.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "ActionScript3",
+				"scopeName": "source.actionscript.3",
+				"path": "./syntaxes/ActionScript3.tmLanguage"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "a16bd2f3-fa79-4780-8b54-80b126219c7d",
+		"publisherId": "ed6a797b-6e5e-4628-8278-4c9ebab1c37c",
+		"publisherDisplayName": "yopsolo",
+		"installedTimestamp": 1632724789399
+	}
+}
